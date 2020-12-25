@@ -10,6 +10,16 @@
   font-weight: bold;
 }
 
+.button {
+  background-color : green;
+  color : white;
+}
+
+.button:hover {
+  background-color : lightgreen;
+  color : black;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
