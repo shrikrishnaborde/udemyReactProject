@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import Person  from './Person/Person';
+import styled from 'styled-components';
 
 class App extends Component {
   state = {
@@ -59,14 +60,16 @@ class App extends Component {
 
   render() {
 
-    const style = {
-      backgroundColor : 'green',
-      color : 'white',
-      ':hover' : {
-        backgroundColor : 'lightgreen',
-        color : 'black'
-      }
-    }
+    // const style = {
+    //   backgroundColor : 'green',
+    //   color : 'white',
+    //   ':hover' : {
+    //     backgroundColor : 'lightgreen',
+    //     color : 'black'
+    //   }
+    // }
+
+    
 
     let persons = null;
 
@@ -86,11 +89,11 @@ class App extends Component {
             }
           </div>
       );
-      style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor : 'lightred',
-        color: 'black'
-      }
+      // style.backgroundColor = 'red';
+      // style[':hover'] = {
+      //   backgroundColor : 'lightred',
+      //   color: 'black'
+      // }
     }
 
     let classes = [];
@@ -102,11 +105,20 @@ class App extends Component {
       classes.push('bold');
     }
 
+    const StyledButton = styled.button`
+      background-color : green;
+      color : white;
+      &:hover  {
+        background-color : lightgreen;
+        color : black;
+      }
+    `;
+
     return (
         <div className="App">
           <h1>H!, I am a React App</h1>
           <p className={classes.join(' ')}> This is really working!!!</p>
-          <button style = { style } onClick={ this.togglePersonsHandler}>Switch Name</button>
+          <StyledButton onClick={ this.togglePersonsHandler}>Switch Name</StyledButton>
           { persons }  
         </div>
     );
