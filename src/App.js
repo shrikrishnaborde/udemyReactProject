@@ -106,10 +106,10 @@ class App extends Component {
     }
 
     const StyledButton = styled.button`
-      background-color : green;
+      background-color : ${ props => props.all ? 'red' : 'green'};
       color : white;
       &:hover  {
-        background-color : lightgreen;
+        background-color : ${ props => props.all ? 'salmon' : 'lightgreen'};
         color : black;
       }
     `;
@@ -118,7 +118,7 @@ class App extends Component {
         <div className="App">
           <h1>H!, I am a React App</h1>
           <p className={classes.join(' ')}> This is really working!!!</p>
-          <StyledButton onClick={ this.togglePersonsHandler}>Switch Name</StyledButton>
+          <StyledButton all= { this.state.showPersons } onClick={ this.togglePersonsHandler}>Switch Name</StyledButton>
           { persons }  
         </div>
     );
