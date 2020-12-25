@@ -1,6 +1,6 @@
 import React from 'react';
 import './Person.css';
-import Radium, { StyleRoot } from 'radium';
+import styled from 'styled-components';
 
 const person = (props) => {
     const style = {
@@ -8,15 +8,25 @@ const person = (props) => {
             width: '450px'
         }
     }
-return (
-    <StyleRoot>
-        <div className="Person" style= { style }>
-            <p onClick= {props.click}>I'm { props.name }!! and i am { props.age } years old</p>
-            <p> { props.children}</p>
-            <input type="text" onChange={props.changed} value ={ props.name}></input>
-        </div>
-    </StyleRoot>
-    )
-}
 
-export default Radium(person);
+    const StyledDiv = styled.div`
+        width: 60%;
+        margin: 16px auto;
+        box-shadow: 0 2px 3px #ccc;
+        padding: 2px;
+        text-align: center;
+    `;
+
+    return (
+            // <div className="Person" style= { style }>
+                
+            // </div>
+            <StyledDiv>
+                <p onClick= {props.click}>I'm { props.name }!! and i am { props.age } years old</p>
+                <p> { props.children}</p>
+                <input type="text" onChange={props.changed} value ={ props.name}></input>
+            </StyledDiv>
+        )
+    }
+
+export default person;
