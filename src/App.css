@@ -20,6 +20,16 @@
   color : black;
 }
 
+.button.Red {
+  background-color : red;
+  color : white;
+}
+
+.button.Red:hover {
+  background-color : salmon;
+  color : black;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
